@@ -1,5 +1,7 @@
 
-#rm(list=ls())
+#NMI
+# Code associated with manuscript titled: "Population-Adjusted Network Meta-Analyses (NMA) Provide New Insights 
+#into the Efficacy of Treatment Alternatives for Metastatic Castration-Sensitive Prostate Cancer (mCSPC)"
 
 library(R2OpenBUGS)
 library(dplyr)
@@ -132,13 +134,6 @@ NMI_interpolation = function(IPD, AgD, x_vect, AgD_EM_cols, IPD_EM_cols,
       
       return(C)
     }
-    
-    #C = sigma_hat_vec_to_mat(sigma_hat)
-    #eigen(C)$values
-    
-    #  x_vect_star = c(1, x_vect)
-    #  SE = c(sqrt(t(x_vect_star)%*%C%*%x_vect_star))
-    #  SE
     
     
     C = sigma_hat_vec_to_mat(sigma_hat)
@@ -296,14 +291,7 @@ x4 = studies_to_impute[studies_to_impute$Study == 'Vaishampayan', 'VOLUME_HIGH']
        
        return(C)
      }
-     
-     #C = sigma_hat_vec_to_mat(sigma_hat)
-     #eigen(C)$values
-     
-     #  x_vect_star = c(1, x_vect)
-     #  SE = c(sqrt(t(x_vect_star)%*%C%*%x_vect_star))
-     #  SE
-     
+    
      
      C = sigma_hat_vec_to_mat(sigma_hat)
      eigen_vals = eigen(C)$values
